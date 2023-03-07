@@ -15,6 +15,7 @@ const SingleResource = () => {
 
   // CHANEG PAGE TITLE
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = resource;
   }, []);
 
