@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
@@ -6,10 +7,16 @@ import Loading from "../utils/Loading";
 
 const SingleResource = () => {
   const { resource } = useParams();
+
   // API URL
   const url =
     "https://engineering-task.elancoapps.com/api/resources/" + resource;
   const { data, loading, error } = useFetch(url);
+
+  // CHANEG PAGE TITLE
+  useEffect(() => {
+    document.title = resource;
+  }, []);
 
   if (loading) return <Loading message="Loading..." />;
 
