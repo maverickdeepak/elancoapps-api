@@ -7,7 +7,7 @@ import NotFound from "./components/404";
 
 function App() {
   return (
-    <div class="flex items-center justify-center mt-2 ">
+    <div className="flex items-center justify-center mt-2 ">
       <Routes>
         <Route path="/" element={<Resources />} />
         <Route path="/:resource" element={<SingleResource />} />
